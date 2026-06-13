@@ -2,7 +2,12 @@
 
 > **Your Business. In Your Pocket.** The official public download and marketing landing page for INVO Pocket.
 
-[![Live Site](https://img.shields.io/badge/Live-Site-green.svg?style=flat-square)](https://inovpocket.netlify.app/)
+<p align="center">
+  <a href="https://inovpocket.netlify.app/" target="_blank">
+    <img src="https://img.shields.io/badge/View%20Live%20Website-00C4B4?style=for-the-badge&logo=netlify&logoColor=white" alt="Live Website" height="40"/>
+  </a>
+</p>
+
 [![Tech Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20JS-blue.svg?style=flat-square)](#)
 [![Deployment](https://img.shields.io/badge/Host-Netlify-00C4B4.svg?style=flat-square&logo=netlify)](https://www.netlify.com)
 
