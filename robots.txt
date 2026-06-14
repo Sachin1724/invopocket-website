@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://inovpocket.netlify.app/sitemap.xml
+Sitemap: https://invopocket.netlify.app/sitemap.xml
+
