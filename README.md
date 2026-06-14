@@ -3,7 +3,7 @@
 > **Your Business. In Your Pocket.** The official public download and marketing landing page for INVO Pocket.
 
 <p align="center">
-  <a href="https://inovpocket.netlify.app/" target="_blank">
+  <a href="https://invopocket.netlify.app/" target="_blank">
     <img src="https://img.shields.io/badge/View%20Live%20Website-00C4B4?style=for-the-badge&logo=netlify&logoColor=white" alt="Live Website" height="40"/>
   </a>
 </p>
@@ -39,11 +39,14 @@ This repository hosts the static files for the INVO Pocket landing page. It is o
 This website is ready to be hosted on any static hosting provider.
 
 ### Option A: Netlify (Recommended)
+
 This repository is pre-configured to build and deploy automatically on Netlify.
+
 1. Connect this repository to your Netlify account.
 2. Netlify will deploy the site on every push to the `main` branch.
 
 ### Option B: GitHub Pages
+
 1. Go to **Settings** -> **Pages** in this repository.
 2. Select the `main` branch and `/ (root)` directory.
 3. Save to deploy.
