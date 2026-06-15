@@ -18,7 +18,7 @@
 <meta property="twitter:url" content="https://invopocket.netlify.app/">
 <meta property="twitter:title" content="INVO Pocket — Your Business. In Your Pocket.">
 <meta property="twitter:description" content="A secure, offline-first, premium quotation and invoice management app. Generate professional PDFs, track invoices, and manage clients securely offline.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -35,7 +35,7 @@
   --g800:#262626;
   --g900:#171717;
   --r-sm:8px;--r-md:16px;--r-lg:24px;--r-xl:32px;
-  --font:'Inter',system-ui,sans-serif;
+  --font:'Poppins',system-ui,sans-serif;
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--font);background:var(--white);color:var(--black);line-height:1.6;overflow-x:hidden}
@@ -70,10 +70,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;height:66px;display:flex;ali
 .btn-ghost:hover{background:rgba(255,255,255,.13)}
 
 /* phones */
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes floatSide { 0%, 100% { transform: translateY(35px); } 50% { transform: translateY(25px); } }
 .phones{display:flex;justify-content:center;align-items:flex-end;gap:14px}
 .phone{background:var(--g900);border:1.5px solid var(--g800);border-radius:32px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.8),0 0 0 .5px rgba(255,255,255,.05);flex-shrink:0}
-.phone.main{width:192px;height:400px;z-index:3}
-.phone.side{width:158px;height:330px;opacity:.55;transform:translateY(35px)}
+.phone.main{width:192px;height:400px;z-index:3;animation:float 6s ease-in-out infinite}
+.phone.side{width:158px;height:330px;opacity:.55;transform:translateY(35px);animation:floatSide 7s ease-in-out infinite}
 .ph-body{padding:14px 11px}
 .ph-notch{width:54px;height:5px;background:var(--g800);border-radius:3px;margin:0 auto 13px}
 .ph-lbl{font-size:8px;font-weight:700;color:var(--g600);letter-spacing:.8px;text-transform:uppercase;margin-bottom:8px}
@@ -120,8 +122,8 @@ section{padding:96px 24px}
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--g200);border-radius:var(--r-lg);overflow:hidden;margin-top:52px;border:1px solid var(--g200)}
 @media(max-width:900px){.feat-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.feat-grid{grid-template-columns:1fr}}
-.feat-card{background:var(--white);padding:30px 28px;transition:background .2s}
-.feat-card:hover{background:var(--g50)}
+.feat-card{background:var(--white);padding:30px 28px;position:relative;z-index:1;transition:background .2s, transform .2s, box-shadow .2s, z-index .0s}
+.feat-card:hover{background:var(--white);transform:scale(1.02);z-index:2;box-shadow:0 12px 24px rgba(0,0,0,0.08);border-radius:var(--r-md)}
 .feat-icon{width:46px;height:46px;background:var(--black);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
 .feat-icon svg{width:20px;height:20px;stroke:var(--white);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .feat-title{font-size:16px;font-weight:800;letter-spacing:-.3px;margin-bottom:7px}
@@ -191,8 +193,8 @@ section{padding:96px 24px}
 .data-sec .sec-eyebrow{color:var(--g700)}
 .data-sec .sec-sub{color:var(--g500);margin:0 auto 8px}
 .data-pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:48px}
-.data-pillar{background:var(--g900);border:1px solid var(--g800);border-radius:var(--r-md);padding:26px;text-align:left;transition:border-color .2s}
-.data-pillar:hover{border-color:var(--g600)}
+.data-pillar{background:var(--g900);border:1px solid var(--g800);border-radius:var(--r-md);padding:26px;text-align:left;transition:border-color .3s, transform .3s, box-shadow .3s}
+.data-pillar:hover{border-color:var(--g600);transform:translateY(-5px);box-shadow:0 12px 24px rgba(0,0,0,0.4)}
 .data-pillar-icon{width:44px;height:44px;background:var(--g800);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
 .data-pillar-icon svg{width:20px;height:20px;stroke:var(--g300);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .data-pillar-title{font-size:15px;font-weight:800;color:var(--white);margin-bottom:6px}
@@ -230,10 +232,10 @@ footer{background:var(--g900);border-top:1px solid var(--g800);padding:44px 24px
   </div>
   <div class="nav-links">
     <a href="#features">Features</a>
-    <a href="#how">How It Works</a>
+    <a href="#security">Security</a>
     <a href="#guide">Video Guide</a>
-    <a href="#install">Install</a>
-    <a href="#compare">Compare</a>
+    <a href="#help">Help Center</a>
+    <a href="#privacy">Privacy Policy</a>
   </div>
   <a href="#download" class="nav-dl">Download APK</a>
 </nav>
