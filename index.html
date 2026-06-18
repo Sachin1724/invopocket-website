@@ -106,7 +106,21 @@ nav {
 }
 .nav-dl:hover::after { transform: translateX(100%); }
 .nav-dl:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(255,255,255,0.15); }
-@media(max-width:768px){ nav { padding: 0 20px; } .nav-links { display: none; } }
+
+.nav-dots{display:none;cursor:pointer;padding:8px;border:none;background:none;flex-direction:column;gap:4px;align-items:center;justify-content:center}
+.nav-dots span{display:block;width:4px;height:4px;border-radius:50%;background:var(--white)}
+.mobile-menu{display:none;position:fixed;top:64px;right:0;left:0;background:rgba(0,0,0,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);box-shadow:0 8px 32px rgba(0,0,0,0.4);padding:16px 24px;z-index:998;flex-direction:column;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:500;color:var(--g400);text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);transition:color .15s}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--white)}
+
+@media(max-width:768px){ 
+  nav { padding: 0 20px; } 
+  .nav-links { display: none; }
+  .nav-dl { display: none; }
+  .nav-dots { display: flex; }
+}
 
 /* ═══════════════════════════════════════════════
    HERO
@@ -627,7 +641,22 @@ footer {
     <a href="developer.html">Developer</a>
   </div>
   <a href="app-release.apk" class="nav-dl" download>Download APK</a>
+
+  <button class="nav-dots" id="menuToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#features">Features</a>
+  <a href="#manage">Workflow</a>
+  <a href="#download">Download</a>
+  <a href="help.html">Help Center</a>
+  <a href="privacy.html">Privacy</a>
+  <a href="delete-account.html">Delete Account</a>
+  <a href="developer.html">Developer</a>
+</div>
+
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
@@ -722,7 +751,7 @@ footer {
         </div>
         <div class="ph-chip">
           <div class="ph-chip-dot"></div>
-          <span class="ph-chip-txt">🔒 AES-256 Encrypted</span>
+          <span class="ph-chip-txt"> AES-256 Encrypted</span>
         </div>
       </div>
     </div>
@@ -1028,7 +1057,7 @@ footer {
     <!-- Animated encryption flow -->
     <div class="enc-flow reveal" id="encFlow">
       <div class="enc-node" id="enc-0">
-        <div class="enc-node-icon">📄</div>
+        <div class="enc-node-icon"></div>
         <div class="enc-node-title">Your Data</div>
         <div class="enc-node-desc">Invoice, client details, amounts — all plain text in memory.</div>
         <div class="enc-cipher" id="enc-plain">Invoice #041<br>Ravi Enterprises<br>₹29,500</div>
@@ -1039,7 +1068,7 @@ footer {
       </div>
 
       <div class="enc-node" id="enc-1">
-        <div class="enc-node-icon">🔑</div>
+        <div class="enc-node-icon"></div>
         <div class="enc-node-title">AES-256 Key</div>
         <div class="enc-node-desc">A unique 256-bit key derived from your device ID. Never leaves your phone.</div>
         <div class="enc-cipher" id="enc-key-anim"></div>
@@ -1050,7 +1079,7 @@ footer {
       </div>
 
       <div class="enc-node" id="enc-2">
-        <div class="enc-node-icon">🔒</div>
+        <div class="enc-node-icon"></div>
         <div class="enc-node-title">Encrypted Data</div>
         <div class="enc-node-desc">Unreadable ciphertext stored in SQLCipher. Useless without your key.</div>
         <div class="enc-cipher" id="enc-cipher-anim"></div>
@@ -1061,10 +1090,10 @@ footer {
       </div>
 
       <div class="enc-node" id="enc-3">
-        <div class="enc-node-icon">💾</div>
+        <div class="enc-node-icon"></div>
         <div class="enc-node-title">Stored Safely</div>
         <div class="enc-node-desc">SQLCipher encrypted database on your device. Zero cloud. Zero exposure.</div>
-        <div class="enc-cipher" id="enc-stored">db.sqlite3<br><span class="highlight">🔐 SQLCipher v4</span></div>
+        <div class="enc-cipher" id="enc-stored">db.sqlite3<br><span class="highlight"> SQLCipher v4</span></div>
       </div>
     </div>
 
@@ -1078,12 +1107,12 @@ footer {
     <!-- Security pillars -->
     <div class="enc-pillars">
       <div class="enc-pillar reveal">
-        <div class="enc-pillar-icon">🔐</div>
+        <div class="enc-pillar-icon"></div>
         <div class="enc-pillar-title">SQLCipher Encrypted DB</div>
         <div class="enc-pillar-desc">Every database file is encrypted at rest using SQLCipher with AES-256-CBC. No plain text ever touches disk.</div>
       </div>
       <div class="enc-pillar reveal stagger-1">
-        <div class="enc-pillar-icon">📱</div>
+        <div class="enc-pillar-icon"></div>
         <div class="enc-pillar-title">On-Device Key Storage</div>
         <div class="enc-pillar-desc">Encryption keys are derived from your device and stored in Android Keystore — hardware-backed, inaccessible to apps.</div>
       </div>
@@ -1093,7 +1122,7 @@ footer {
         <div class="enc-pillar-desc">InvoPocket never sends your data anywhere. No server, no cloud backup, no analytics. It stays on your device — period.</div>
       </div>
       <div class="enc-pillar reveal stagger-3">
-        <div class="enc-pillar-icon">👆</div>
+        <div class="enc-pillar-icon"></div>
         <div class="enc-pillar-title">Biometric App Lock</div>
         <div class="enc-pillar-desc">Fingerprint or face authentication protects app entry. Even if your phone is unlocked, InvoPocket stays locked.</div>
       </div>
@@ -1135,7 +1164,7 @@ footer {
     <div class="install-steps reveal stagger-3">
       <div class="inst-step">
         <div class="inst-num">1</div>
-        <div class="inst-icon">📲</div>
+        <div class="inst-icon"></div>
         <div class="inst-title">Download the APK</div>
         <div class="inst-desc">Tap the button below to download the APK directly from our site. No Play Store account needed.</div>
       </div>
@@ -1147,7 +1176,7 @@ footer {
       </div>
       <div class="inst-step">
         <div class="inst-num">3</div>
-        <div class="inst-icon">🚀</div>
+        <div class="inst-icon"></div>
         <div class="inst-title">Open &amp; create</div>
         <div class="inst-desc">Launch InvoPocket, set your business name and logo — and create your first invoice in under 2 minutes.</div>
       </div>
@@ -1165,7 +1194,7 @@ footer {
 <!-- ═══ MADE IN ODISHA ═══ -->
 <section class="odisha">
   <div class="wrap">
-    <div class="odisha-eye reveal">🇮🇳 With Pride</div>
+    <div class="odisha-eye reveal"> With Pride</div>
     <h2 class="odisha-title reveal stagger-1">
       <span class="from">Built in</span>
       Odisha<br>
@@ -1184,7 +1213,7 @@ footer {
     </div>
 
     <p style="font-size:13px;color:var(--g700);margin-bottom:48px" class="reveal stagger-4">
-      🔒 Privacy in your hand
+       Privacy in your hand
     </p>
   </div>
 
@@ -1204,7 +1233,7 @@ footer {
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
     Download Free APK
   </a>
-  <p class="cta-note reveal stagger-5">No account · No subscription · No cloud · Made in Odisha 🇮🇳</p>
+  <p class="cta-note reveal stagger-5">No account · No subscription · No cloud · Made in Odisha </p>
 </section>
 
 <!-- ═══ FOOTER ═══ -->
@@ -1412,6 +1441,17 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
+</script>
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+if(menuToggle && mobileMenu) {
+  menuToggle.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
+  document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) mobileMenu.classList.remove('open');
+  });
+}
 </script>
 </body>
 </html>
