@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>Developer — InvoPocket</title>
+<meta name="description" content="Meet the developer behind InvoPocket. Built by Sachin from Odisha, India.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#000;--white:#fff;
+  --g50:#FAFAFA;--g100:#F5F5F5;--g200:#E5E5E5;--g300:#D4D4D4;
+  --g400:#A3A3A3;--g500:#737373;--g600:#525252;--g700:#404040;
+  --g800:#262626;--g900:#171717;
+  --r-sm:8px;--r-md:16px;--r-lg:24px;--r-xl:32px;
+  --font:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--white);color:var(--black);line-height:1.6;overflow-x:hidden}
+
+/* ══════════ NAV (dark — matches home page) ══════════ */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(0,0,0,0.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06)}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand img{width:34px;height:34px;object-fit:contain;border-radius:9px}
+.nav-brand-name{font-size:16px;font-weight:800;letter-spacing:-0.4px;color:var(--white)}
+.nav-brand-name span{color:var(--g500)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:13px;font-weight:500;color:var(--g400);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-links a.active{color:var(--white);font-weight:700}
+
+/* ── THREE DOT MENU (mobile) ── */
+.nav-dots{display:none;cursor:pointer;padding:8px;border:none;background:none;flex-direction:column;gap:4px;align-items:center;justify-content:center}
+.nav-dots span{display:block;width:4px;height:4px;border-radius:50%;background:var(--white)}
+.mobile-menu{display:none;position:fixed;top:64px;right:0;left:0;background:rgba(0,0,0,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);box-shadow:0 8px 32px rgba(0,0,0,0.4);padding:16px 24px;z-index:998;flex-direction:column;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:15px;font-weight:500;color:var(--g400);text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);transition:color .15s}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--white)}
+
+@media(max-width:768px){
+  nav{padding:0 20px;height:56px}
+  .nav-brand img{width:30px;height:30px}
+  .nav-brand-name{font-size:15px}
+  .nav-links{display:none}
+  .nav-dots{display:flex}
+  .mobile-menu{top:56px}
+}
+
+/* ══════════ CONTENT ══════════ */
+.content{max-width:800px;margin:100px auto 80px;padding:0 24px}
+
+/* ── DEVELOPER CARD ── */
+.dev-card{border:1px solid var(--g200);border-radius:var(--r-lg);padding:48px 40px;text-align:center;margin-bottom:48px;position:relative;overflow:hidden}
+.dev-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--black)}
+.dev-avatar{width:100px;height:100px;border-radius:50%;background:var(--g900);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:36px;font-weight:900;color:var(--white);letter-spacing:-1px;border:3px solid var(--g200)}
+.dev-name{font-size:32px;font-weight:900;letter-spacing:-1px;margin-bottom:4px}
+.dev-handle{font-size:15px;color:var(--g400);margin-bottom:8px;font-weight:500}
+.dev-role{font-size:14px;color:var(--g500);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:24px}
+.dev-bio{font-size:16px;color:var(--g600);line-height:1.8;max-width:560px;margin:0 auto 32px;text-align:left}
+
+/* ── LINKS ── */
+.dev-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:32px}
+.dev-link{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:var(--r-sm);font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;border:1px solid var(--g200);color:var(--g700);background:var(--white)}
+.dev-link:hover{border-color:var(--black);color:var(--black);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.dev-link svg{width:18px;height:18px;flex-shrink:0}
+
+/* ── TECH STACK ── */
+.section-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--g400);margin-bottom:16px}
+.content h2{font-size:24px;font-weight:800;letter-spacing:-0.5px;margin-bottom:16px}
+.content p{font-size:16px;color:var(--g600);margin-bottom:16px;line-height:1.7}
+
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:24px 0 48px}
+.tech-item{border:1px solid var(--g200);border-radius:var(--r-md);padding:20px;transition:all .2s}
+.tech-item:hover{border-color:var(--g300);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.04)}
+.tech-item h4{font-size:15px;font-weight:700;margin-bottom:4px;color:var(--black)}
+.tech-item p{font-size:13px;color:var(--g500);margin-bottom:0;line-height:1.5}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:var(--g200);margin:48px 0}
+
+/* ── VALUES ── */
+.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:24px 0 48px}
+.value-card{padding:24px;border:1px solid var(--g200);border-radius:var(--r-md);transition:all .2s}
+.value-card:hover{border-color:var(--g300);transform:translateY(-2px)}
+.value-card h4{font-size:15px;font-weight:800;margin-bottom:8px;color:var(--black)}
+.value-card p{font-size:13px;color:var(--g500);margin-bottom:0;line-height:1.6}
+
+/* ── CONTACT ── */
+.contact-box{border:1px solid var(--g200);border-radius:var(--r-md);padding:32px;text-align:center}
+.contact-box h3{font-size:20px;font-weight:800;margin-bottom:8px}
+.contact-box p{font-size:15px;color:var(--g500);margin-bottom:16px}
+.contact-box a{color:var(--black);font-weight:600;text-decoration:underline;text-underline-offset:3px;font-size:16px}
+.contact-box a:hover{color:var(--g600)}
+
+/* ══════════ RESPONSIVE ══════════ */
+@media(max-width:768px){
+  .content{margin:40px auto 60px;padding:0 16px}
+  .dev-card{padding:32px 20px}
+  .dev-name{font-size:26px}
+  .dev-bio{font-size:15px}
+  .dev-avatar{width:80px;height:80px;font-size:28px}
+  .content h2{font-size:20px}
+  .tech-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .dev-links{flex-direction:column;align-items:stretch}
+  .dev-link{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a href="index.html" class="nav-brand">
+    <img src="logo.png" alt="InvoPocket Logo">
+    <div class="nav-brand-name">Invo<span>Pocket</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="help.html">Help Center</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="delete-account.html">Delete Account</a>
+    <a href="developer.html" class="active">Developer</a>
+  </div>
+  <button class="nav-dots" id="menuToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="help.html">Help Center</a>
+  <a href="privacy.html">Privacy</a>
+  <a href="delete-account.html">Delete Account</a>
+  <a href="developer.html" class="active">Developer</a>
+</div>
+
+
+<!-- ══ CONTENT ══ -->
+<div class="content">
+
+  <!-- Developer Card -->
+  <div class="dev-card">
+    <div class="dev-avatar">S</div>
+    <div class="dev-name">Sachin</div>
+    <div class="dev-handle">@Sachin1724</div>
+    <div class="dev-role">Independent Developer</div>
+    <p class="dev-bio">
+      I am a developer from Odisha, India. I built InvoPocket to solve a real problem I saw around me -- small business owners, freelancers, and consultants struggling with invoicing and quotation management on their phones. I believe business tools should be private, offline-first, and free from subscriptions. InvoPocket is the result of that belief: a fully encrypted, zero-cloud-required invoicing app that works entirely from your pocket.
+    </p>
+    <div class="dev-links">
+      <a href="https://github.com/Sachin1724" class="dev-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="mailto:info.corenav@gmail.com" class="dev-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,7 12,13 2,7"/></svg>
+        Email
+      </a>
+      <a href="https://invopocket.netlify.app" class="dev-link" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Website
+      </a>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- About the Project -->
+  <div class="section-label">About the project</div>
+  <h2>Why InvoPocket Exists</h2>
+  <p>Most invoicing apps require internet, charge monthly fees, and store your business data on their servers. InvoPocket takes a different approach. Everything runs locally on your device with AES-256 encryption. No server ever sees your client list, revenue numbers, or invoice history in plain text. Cloud backup is optional and end-to-end encrypted.</p>
+  <p>The app is built with Flutter, targeting Android first, with a focus on speed, simplicity, and privacy. It is made in Odisha for businesses everywhere.</p>
+
+  <div class="divider"></div>
+
+  <!-- Tech Stack -->
+  <div class="section-label">Built with</div>
+  <h2>Technology Stack</h2>
+
+  <div class="tech-grid">
+    <div class="tech-item">
+      <h4>Flutter + Dart</h4>
+      <p>Cross-platform UI framework for native performance on Android and iOS.</p>
+    </div>
+    <div class="tech-item">
+      <h4>SQLite (sqlcipher)</h4>
+      <p>On-device encrypted database for offline-first data storage.</p>
+    </div>
+    <div class="tech-item">
+      <h4>Firebase + Firestore</h4>
+      <p>Optional cloud backup with Google Auth and encrypted sync.</p>
+    </div>
+    <div class="tech-item">
+      <h4>AES-256 Encryption</h4>
+      <p>Military-grade encryption applied to all cloud-synced data before transmission.</p>
+    </div>
+    <div class="tech-item">
+      <h4>Riverpod</h4>
+      <p>Reactive state management for responsive and predictable UI updates.</p>
+    </div>
+    <div class="tech-item">
+      <h4>PDF + Excel Export</h4>
+      <p>Dynamic document generation with GST calculations and UPI QR codes.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Values -->
+  <div class="section-label">Core principles</div>
+  <h2>What Drives This Project</h2>
+
+  <div class="values">
+    <div class="value-card">
+      <h4>Privacy First</h4>
+      <p>Your data stays on your device. Cloud backup is optional and fully encrypted. Zero tracking, zero analytics cookies.</p>
+    </div>
+    <div class="value-card">
+      <h4>Offline Always</h4>
+      <p>No internet needed for any core function. Create invoices, manage clients, and export reports without connectivity.</p>
+    </div>
+    <div class="value-card">
+      <h4>Free Forever</h4>
+      <p>No subscriptions, no paywalls, no hidden charges. All features are unlocked from day one.</p>
+    </div>
+    <div class="value-card">
+      <h4>Made in India</h4>
+      <p>Built from Odisha with a deep understanding of how small businesses operate on the ground.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Contact -->
+  <div class="contact-box">
+    <h3>Get in Touch</h3>
+    <p>Have feedback, a bug report, or want to collaborate? Reach out anytime.</p>
+    <a href="mailto:info.corenav@gmail.com">info.corenav@gmail.com</a>
+  </div>
+
+</div>
+
+<script>
+// ── Mobile menu toggle ──
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+menuToggle.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+document.addEventListener('click', (e) => {
+  if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+    mobileMenu.classList.remove('open');
+  }
+});
+
+</script>
+</body>
+</html>

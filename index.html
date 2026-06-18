@@ -85,9 +85,7 @@ nav {
 .nav-brand { display: flex; align-items: center; gap: 10px; }
 .nav-logo {
   width: 34px; height: 34px; border-radius: 9px;
-  background: var(--g900); border: 1px solid var(--g800);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px; font-weight: 900; color: var(--white); letter-spacing: -0.5px;
+  object-fit: contain;
 }
 .nav-name { font-size: 16px; font-weight: 800; letter-spacing: -0.4px; }
 .nav-name span { color: var(--g500); }
@@ -615,7 +613,7 @@ footer {
 <!-- ═══ NAV ═══ -->
 <nav>
   <div class="nav-brand">
-    <div class="nav-logo">iP</div>
+    <img class="nav-logo" src="logo.png" alt="InvoPocket Logo">
     <span class="nav-name">Invo<span>Pocket</span></span>
   </div>
   <div class="nav-links">
@@ -623,6 +621,10 @@ footer {
     <a href="#manage">How it works</a>
     <a href="#encryption">Security</a>
     <a href="#install">Install</a>
+    <a href="help.html">Help Center</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="delete-account.html">Delete Account</a>
+    <a href="developer.html">Developer</a>
   </div>
   <a href="app-release.apk" class="nav-dl" download>Download APK</a>
 </nav>
