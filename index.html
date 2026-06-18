@@ -1057,7 +1057,7 @@ footer {
     <!-- Animated encryption flow -->
     <div class="enc-flow reveal" id="encFlow">
       <div class="enc-node" id="enc-0">
-        <div class="enc-node-icon"></div>
+        <div class="enc-node-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#00ff88" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 5px #00ff88);"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
         <div class="enc-node-title">Your Data</div>
         <div class="enc-node-desc">Invoice, client details, amounts — all plain text in memory.</div>
         <div class="enc-cipher" id="enc-plain">Invoice #041<br>Ravi Enterprises<br>₹29,500</div>
@@ -1068,7 +1068,7 @@ footer {
       </div>
 
       <div class="enc-node" id="enc-1">
-        <div class="enc-node-icon"></div>
+        <div class="enc-node-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#00f0ff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 5px #00f0ff);"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg></div>
         <div class="enc-node-title">AES-256 Key</div>
         <div class="enc-node-desc">A unique 256-bit key derived from your device ID. Never leaves your phone.</div>
         <div class="enc-cipher" id="enc-key-anim"></div>
@@ -1079,7 +1079,7 @@ footer {
       </div>
 
       <div class="enc-node" id="enc-2">
-        <div class="enc-node-icon"></div>
+        <div class="enc-node-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#b026ff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 5px #b026ff);"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>
         <div class="enc-node-title">Encrypted Data</div>
         <div class="enc-node-desc">Unreadable ciphertext stored in SQLCipher. Useless without your key.</div>
         <div class="enc-cipher" id="enc-cipher-anim"></div>
@@ -1090,7 +1090,7 @@ footer {
       </div>
 
       <div class="enc-node" id="enc-3">
-        <div class="enc-node-icon"></div>
+        <div class="enc-node-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#ffaa00" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 5px #ffaa00);"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg></div>
         <div class="enc-node-title">Stored Safely</div>
         <div class="enc-node-desc">SQLCipher encrypted database on your device. Zero cloud. Zero exposure.</div>
         <div class="enc-cipher" id="enc-stored">db.sqlite3<br><span class="highlight"> SQLCipher v4</span></div>
