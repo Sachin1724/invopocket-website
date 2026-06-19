@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>Success — InvoPocket Testing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black: #000;
+  --white: #fff;
+  --g500: #71717A;
+  --g600: #52525B;
+  --g800: #27272A;
+  --g950: #09090B;
+  --r-sm: 8px; --r-lg: 24px;
+  --font: 'Inter', system-ui, sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font);
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAV */
+nav {
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px;
+  background: rgba(0,0,0,0.8);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-brand { display: flex; align-items: center; gap: 10px; }
+.nav-logo { width: 34px; height: 34px; border-radius: 9px; object-fit: contain; }
+.nav-name { font-size: 16px; font-weight: 800; letter-spacing: -0.4px; }
+.nav-name span { color: var(--g500); }
+
+/* MAIN CONTENT */
+.main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  position: relative;
+}
+.success-card {
+  background: var(--g950);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--r-lg);
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+.success-icon {
+  width: 64px; height: 64px;
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  color: #4ade80;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px;
+  margin: 0 auto 24px;
+}
+.success-title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+.success-text {
+  font-size: 14px;
+  color: var(--g500);
+  margin-bottom: 32px;
+}
+.btn-home {
+  display: inline-block;
+  background: var(--white);
+  color: var(--black);
+  padding: 12px 28px;
+  border-radius: var(--r-sm);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s var(--ease);
+}
+.btn-home:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,255,255,0.25);
+}
+
+/* FOOTER */
+footer {
+  background: var(--g950);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 24px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--g600);
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <div class="nav-brand">
+    <img class="nav-logo" src="logo.png" alt="InvoPocket Logo">
+    <span class="nav-name">Invo<span>Pocket</span></span>
+  </div>
+</nav>
+
+<!-- ═══ MAIN CONTENT ═══ -->
+<div class="main-content">
+  <div class="success-card">
+    <div class="success-icon">&checkmark;</div>
+    <h1 class="success-title">Thank You!</h1>
+    <p class="success-text">Your request to join our testing group was submitted successfully. We will review your email and send you an invitation when the next version is ready for testing.</p>
+    <a href="index.html" class="btn-home">Back to Homepage</a>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <p>&copy; 2026 InvoPocket. Securely created for internal testing.</p>
+</footer>
+
+</body>
+</html>
