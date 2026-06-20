@@ -1,4 +1,6 @@
 {
   "latestVersion": "1.0.1",
-  "updateUrl": "https://invopocket.netlify.app/"
+  "updateUrl": "https://invopocket.com/",
+  "min_version": "1.0.1",
+  "update_url": "https://invopocket.com/"
 }
